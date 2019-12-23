@@ -1,0 +1,78 @@
+﻿@model OnlineShop.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="header-outs" id="home">
+    @*@RenderBody()*@
+    @*@RenderSection("header", required: true)*@
+    @*@RenderPage("~/Views/Shared/Header.cshtml")*@
+    @{Html.RenderAction("Header", "Home");}
+    <!-- Slideshow 4 -->
+</div>
+
+<!-- banner -->
+<div class="inner_page-banner one-img">
+</div>
+<!--//banner -->
+<!-- short -->
+<div class="using-border py-3">
+    <div class="inner_breadcrumb  ml-4">
+        <ul class="short_ls">
+            <li>
+                <a href="/">Home</a>
+                <span>/ /</span>
+            </li>
+            <li>Đăng nhập</li>
+        </ul>
+    </div>
+</div>
+
+
+<section class="contact py-lg-4 py-md-3 py-sm-3 py-3">
+    <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+        <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Đăng nhập</h3>
+        <div class="contact-list-grid">
+            @using (Html.BeginForm("Login","User",FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                <div class="form-group contact-forms">
+                    @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @name = "username", @placeholder = "UserName" })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="form-group contact-forms">
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control", @name = "password", @placeholder = "Passowrd" })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+
+                <button type="submit" class="btn btn-block sent-butnn">Login</button>
+
+                <a class=" btn btn-facebook" href="/user/loginfacebook"><i class="fab fa-facebook-f"></i> Đăng nhập bằng Facebook</a>
+
+                @*<div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>*@
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+           
+
+            

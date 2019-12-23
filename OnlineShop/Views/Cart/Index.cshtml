@@ -1,0 +1,177 @@
+﻿@model List<OnlineShop.Models.CartItem>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section cssHeader{
+    <!--checkout-->
+    <link rel="stylesheet" type="text/css" href="~/Assets/Client/css/checkout.css">
+    <!--//checkout-->
+}
+
+@section jsFooter{
+    <!--quantity-->
+    <script>
+        $('.value-plus').on('click', function () {
+            var divUpd = $(this).parent().find('.value'),
+                newVal = parseInt(divUpd.text(), 10) + 1;
+            divUpd.text(newVal);
+
+            //var newvalue = parseInt(divUpd.text(), 10);
+            //alert(newvalue);
+            
+            //var cartList = [];
+            //$.each(newVal, function (i, item) {
+            //    cartList.push({
+            //        Quantity: $(item).val(),
+            //        Product: {
+            //            ID: $(item).data('id')
+            //        }
+            //    })
+            //})
+
+            //$.ajax({
+            //    url: '/Cart/Update',
+            //    data: { cartModel: JSON.stringify(cartList) },
+            //    contentType: 'json',
+            //    type: 'POST',
+            //    success: function (res) {
+            //        if (res.Status == true) {
+            //            window.location.href = "/gio-hang";
+            //        }
+                   
+            //    }
+            //})
+        });
+
+        $('.value-minus').on('click', function () {
+            var divUpd = $(this).parent().find('.value'),
+                newVal = parseInt(divUpd.text(), 10) - 1;
+            if (newVal >= 1) divUpd.text(newVal);
+        });
+    </script>
+    <!--quantity-->
+    <!--closed-->
+    @*<script>
+        $(document).ready(function (c) {
+            $('.close1').on('click', function (c) {
+                $('.rem1').fadeOut('slow', function (c) {
+                    $('.rem1').remove();
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function (c) {
+            $('.close2').on('click', function (c) {
+                $('.rem2').fadeOut('slow', function (c) {
+                    $('.rem2').remove();
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function (c) {
+            $('.close3').on('click', function (c) {
+                $('.rem3').fadeOut('slow', function (c) {
+                    $('.rem3').remove();
+                });
+            });
+        });
+    </script>*@
+    <!--//closed-->
+
+}
+
+<div class="header-outs" id="home">
+    @{Html.RenderAction("Header", "Home");}
+</div>
+
+<!-- banner -->
+<div class="inner_page-banner one-img">
+</div>
+<!--//banner -->
+<!-- short -->
+<div class="using-border py-3">
+    <div class="inner_breadcrumb  ml-4">
+        <ul class="short_ls">
+            <li>
+                <a href="/">Home</a>
+                <span>/ /</span>
+            </li>
+            <li>Giỏ hàng</li>
+        </ul>
+    </div>
+</div>
+
+<section class="checkout py-lg-4 py-md-3 py-sm-3 py-3">
+    <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+        <div class="shop_inner_inf">
+            <div class="privacy about">
+                <h3>Chec<span>kout</span></h3>
+                <div class="checkout-right">
+                    <h4>Your shopping cart contains: <span>@Model.Count Products</span></h4>
+                    <table class="timetable_sub">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Product</th>
+                                <th>Quality</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr class="rem1">
+                                <td class="invert">@item.Product.ID</td>
+                                <td class="invert-image"><a href="/chi-tiet-san-pham/@item.Product.ID"><img src="@item.Product.Image" alt=" " class="img-responsive"></a></td>
+                                <td class="invert">
+                                    <div class="quantity">
+                                        <div class="quantity-select">
+                                            <a href="/giam-so-luong?id=@item.Product.ID"><div class="entry value-minus">&nbsp;</div></a>
+                                            <div class="entry value" data-id="@item.Product.ID"><span class="id">@item.Quantity</span></div>
+                                            <a href="/tang-so-luong?id=@item.Product.ID"><div class="entry value-plus active">&nbsp;</div></a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="invert">@item.Product.Name</td>
+                                @if (item.Product.PromotionPrice == 0 || item.Product.PromotionPrice == null)
+                                {
+                                    <td class="invert">$@item.Product.Price</td>
+                                }
+                                else
+                                {
+                                    <td class="invert">$@item.Product.PromotionPrice</td>
+                                }
+                                <td class="invert">
+                                    <div class="rem">
+                                        <a href="/xoa-khoi-gio-hang?id=@item.Product.ID"> <div class="close1"> </div></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="checkout-left">
+                    <div class="col-md-4 checkout-left-basket">
+                        <h4><a href="/">Quay lại trang chủ</a></h4>
+                    </div>
+                    <div class="col-md-4 checkout-left-basket">
+                        <div type="button" data-toggle="modal" data-target="#exampleModal2"><h4><a href="javascript:void(0);">Thanh toán</a></h4></div>
+                    </div>
+                   
+                    <div class="clearfix"> </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <!-- //top products -->
+    </div>
+</section>
+

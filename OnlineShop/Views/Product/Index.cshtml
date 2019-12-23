@@ -1,0 +1,198 @@
+﻿@model Models.FE.Product
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section cssHeader{
+    <link rel="stylesheet" type="text/css" href="~/Assets/Client/css/jquery-ui1.css">
+    <link href="~/Assets/Client/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="~/Assets/Client/css/flexslider.css" type="text/css" media="screen" />
+}
+
+@section jsFooter{
+    <script src="~/Assets/Client/js/jquery-ui.js"></script>
+    <script>
+        //<![CDATA[
+        $(window).load(function () {
+            $("#slider-range").slider({
+                range: true,
+                min: 0,
+                max: 9000,
+                values: [50, 6000],
+                slide: function (event, ui) {
+                    $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                }
+            });
+            $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
+
+        }); //]]>
+    </script>
+    <!-- //price range (top products) -->
+    <!-- single -->
+    <script src="~/Assets/Client/js/imagezoom.js"></script>
+    <!-- single -->
+    <!-- script for responsive tabs -->
+    <script src="~/Assets/Client/js/easy-responsive-tabs.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true, // 100% fit in a container
+                closed: 'accordion', // Start closed if in accordion view
+                activate: function (event) { // Callback function if tab is switched
+                    var $tab = $(this);
+                    var $info = $('#tabInfo');
+                    var $name = $('span', $info);
+                    $name.text($tab.text());
+                    $info.show();
+                }
+            });
+            $('#verticalTab').easyResponsiveTabs({
+                type: 'vertical',
+                width: 'auto',
+                fit: true
+            });
+        });
+    </script>
+    <!-- FlexSlider -->
+    <script src="~/Assets/Client/js/jquery.flexslider.js"></script>
+    <script>
+        // Can also be used with $(document).ready()
+        $(window).load(function () {
+            $('.flexslider1').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+        });
+    </script>
+    <!-- //FlexSlider-->
+}
+
+<div class="header-outs" id="home">
+    @*@RenderBody()*@
+    @*@RenderSection("header", required: true)*@
+    @*@RenderPage("~/Views/Shared/Header.cshtml")*@
+    @{Html.RenderAction("Header", "Home");}
+    <!-- Slideshow 4 -->
+</div>
+
+<!-- banner -->
+<div class="inner_page-banner one-img">
+</div>
+<!--//banner -->
+<!-- short -->
+<div class="using-border py-3">
+    <div class="inner_breadcrumb  ml-4">
+        <ul class="short_ls">
+            <li>
+                <a href="/">Home</a>
+                <span>/ /</span>
+            </li>
+            <li>Chi tiết sản phẩm</li>
+        </ul>
+    </div>
+</div>
+<section class="banner-bottom py-lg-5 py-3">
+    <div class="container">
+        <div class="inner-sec-shop pt-lg-4 pt-3">
+            <div class="row">
+                <div class="col-lg-4 single-right-left ">
+                    <div class="grid images_3_of_2">
+                        <div class="flexslider1">
+                            <ul class="slides">
+                                <li data-thumb="@Model.Image">
+                                    <div class="thumb-image"> <img src="@Model.Image" data-imagezoom="true" class="img-fluid" alt=" "> </div>
+                                </li>
+                                <li data-thumb="@Model.Image">
+                                    <div class="thumb-image"> <img src="@Model.Image" data-imagezoom="true" class="img-fluid" alt=" "> </div>
+                                </li>
+                                <li data-thumb="@Model.Image">
+                                    <div class="thumb-image"> <img src="@Model.Image" data-imagezoom="true" class="img-fluid" alt=" "> </div>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 single-right-left simpleCart_shelfItem">
+                    <h3>@Model.Name</h3>
+                    <p>
+                        @if (Model.PromotionPrice > 0)
+                        {
+                            <span class="item_price">$@Model.PromotionPrice</span>
+                            <del>@Model.Price</del>
+                        }
+                        else
+                        {
+                            <span class="item_price">$@Model.Price</span>
+                        }
+                    </p>
+
+                    <div class="description">
+                        <h5>Check delivery, payment options and charges at your location</h5>
+                        <form action="#" method="post">
+                            <input class="form-control" type="text" name="Email" placeholder="Please enter..." required="">
+                            <input type="submit" value="Check">
+                        </form>
+                    </div>
+                    <div class="color-quality">
+                        <div class="color-quality-right">
+                            <h5>Size :</h5>
+                            <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
+                                <option value="null">2 Feet</option>
+                                <option value="null">3 Feet</option>
+                                <option value="null">4 Feet</option>
+                                <option value="null">5 Feet</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="occasional">
+                        <h5>Types :</h5>
+                        <div class="colr ert">
+                            <label class="radio"><input type="radio" name="radio" checked=""><i></i> @Model.Name (Black)</label>
+                        </div>
+                        <div class="colr">
+                            <label class="radio"><input type="radio" name="radio"><i></i>@Model.Name (Brown)</label>
+                        </div>
+                        <div class="colr">
+                            <label class="radio"><input type="radio" name="radio"><i></i>@Model.Name (Pink)</label>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <a href="/them-vao-gio-hang?id=@Model.ID&quantity=1">
+                        <button class="toys-cart ptoys-cart">
+                            Add to Cart
+                        </button>
+                    </a>
+                   
+                </div>
+                <div class="clearfix"> </div>
+                <!--/tabs-->
+                <div class="responsive_tabs">
+                    <div id="horizontalTab">
+                        <ul class="resp-tabs-list">
+                            <li>Description</li>
+                        </ul>
+                        <div class="resp-tabs-container">
+                            <!--/tab_one-->
+                            <div class="tab1">
+                                <div class="single_page">
+                                    <h6>Lorem ipsum dolor sit amet</h6>
+                                    <p>
+                                        @Model.Description
+                                    </p>
+                                </div>
+                            </div>
+                            <!--//tab_one-->
+                        </div>
+                    </div>
+                </div>
+                <!--//tabs-->
+            </div>
+        </div>
+    </div>
+</section>

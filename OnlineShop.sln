@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop", "OnlineShop\OnlineShop.csproj", "{337777FA-D78B-4C97-987A-3917C127FCDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{84667CFB-1087-4E05-A487-FAC6BA47F931}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{48F168D0-0489-4223-BBD4-49953DD3C2F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{337777FA-D78B-4C97-987A-3917C127FCDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337777FA-D78B-4C97-987A-3917C127FCDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337777FA-D78B-4C97-987A-3917C127FCDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337777FA-D78B-4C97-987A-3917C127FCDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84667CFB-1087-4E05-A487-FAC6BA47F931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84667CFB-1087-4E05-A487-FAC6BA47F931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84667CFB-1087-4E05-A487-FAC6BA47F931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84667CFB-1087-4E05-A487-FAC6BA47F931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F168D0-0489-4223-BBD4-49953DD3C2F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F168D0-0489-4223-BBD4-49953DD3C2F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F168D0-0489-4223-BBD4-49953DD3C2F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F168D0-0489-4223-BBD4-49953DD3C2F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E040BB2B-4C21-4726-A9E5-CBF1C0559F7F}
+	EndGlobalSection
+EndGlobal
