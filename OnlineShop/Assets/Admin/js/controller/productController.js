@@ -19,7 +19,7 @@
                         btn.text('Kích hoạt');
                     }
                     else {
-                        btn.text('Khóa abc');
+                        btn.text('Khóa');
                     }
                 }
             });

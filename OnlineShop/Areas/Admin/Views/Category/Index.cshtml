@@ -4,7 +4,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-@model List<Models.FE.Product>
+@model List<Models.FE.Menu>
 
 @section cssAdminHeader{
     <!-- Custom styles for this page -->
@@ -24,13 +24,13 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Danh sách sản phẩm</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Danh mục Loại sản phẩm</h6>
     </div>
     <div class="card-body">
         <div class="form-group row">
-            <a class="btn btn-primary mb-3 ml-2 mb-sm-0" href="/Admin/Product/Create">
+            <a class="btn btn-primary mb-3 ml-2 mb-sm-0" href="#">
                 <i class="fa fa-plus"></i>
-                Thêm sản phẩm mới
+                Thêm Loại sản phẩm mới
             </a>
         </div>
         <div class="table-responsive">
@@ -38,8 +38,6 @@
                 <thead>
                     <tr>
                         <th>Tên</th>
-                        <th style="text-align: center">Hình ảnh</th>
-                        <th style="text-align: center">Ngày thêm</th>
                         <th style="text-align: center">Trạng thái</th>
                         <th style="text-align: center">Thao tác</th>
                     </tr>
@@ -48,10 +46,8 @@
                     @foreach (var item in Model)
                     {
                         <tr id="row_@item.ID">
-                            <td>@item.Name</td>
-                            <td class="text-center"><img src="@item.Image" width="100px" /></td>
-                            <td class="text-center">@item.CreatedDate</td>
-                            <td class="text-center"><a href="#" class="btn-active" data-id="@item.ID">@(item.Status ? "Hoạt động" : "Khóa")</a></td>
+                            <td>@item.Text</td>
+                            <td class="text-center"><a href="#" class="btn-active">@(item.Status ? "Hoạt động" : "Khóa")</a></td>
                             <td class="text-center">
                                 <a href="/Admin/Product/Edit/@item.ID"><i class="fa fa-edit"></i></a>
                                 |
@@ -85,9 +81,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-               <button id="btnDelete" class="btn btn-primary">Xóa</button>
+                <button id="btnDelete" class="btn btn-primary">Xóa</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
             </div>
         </div>
     </div>
 </div>
+

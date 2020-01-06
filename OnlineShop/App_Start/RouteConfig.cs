@@ -13,8 +13,8 @@ namespace OnlineShop
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.IgnoreRoute("{botdetect}",
-                new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
+            //routes.IgnoreRoute("{botdetect}",
+            //    new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
             routes.MapRoute(
                name: "About",
                url: "gioi-thieu",

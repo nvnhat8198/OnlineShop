@@ -1,7 +1,16 @@
 ﻿@model List<Models.FE.Menu>
 
+<style>
+    .btnRegister:hover {
+        background-color: #888888;
+    }
+    .btnRegister{
+        margin-right:20px;
+    }
+</style>
+
 <div class="header-bar">
-    <div class="info-top-grid">
+    <div class="info-top-grid" style="padding: 7px">
         <div class="info-contact-agile">
             <ul>
                 <li>
@@ -10,7 +19,7 @@
                 </li>
                 <li>
                     <span class="fas fa-envelope"></span>
-                    <p><a href="mailto:info@example.com">info@example1.com</a></p>
+                    <p><a href="mailto:info@gmail.com">info@gmail.com</a></p>
                 </li>
                 <li>
                 </li>
@@ -20,7 +29,7 @@
     <div class="container-fluid">
         <div class="hedder-up row">
             <div class="col-lg-3 col-md-3 logo-head">
-                <h1><a class="navbar-brand" href="index.html">Toys-Shop</a></h1>
+                <h1><a class="navbar-brand" href="/">Toys-Shop</a></h1>
             </div>
             <div class="col-lg-5 col-md-6 search-right">
                 <form class="form-inline my-lg-0" action="/tim-kiem" method="get">
@@ -31,33 +40,34 @@
             <div class="col-lg-4 col-md-3 right-side-cart">
                 <div class="cart-icons">
                     <ul>
-                        @{ #line 2 "E:\MeUSolutions\ASP.NETfrom11\OnlineShop\OnlineShop\Views\Shared\Header.cshtml"
-                            /**/
-
+                        @{
                             var session = (UserLogin)Session[OnlineShop.Common.CommonConstants.USER_SESSION];
                         }
+
                         @if (session == null)
-                            {
-                                <li>
-                                    <a href="/dang-ki"><button type="button"> <span class="far fa-registered"></span></button></a>
-                                </li>
-                                <li>
-                                    <a href="/dang-nhap"><button type="button"> <span class="far fa-user"></span></button></a>
-                                </li>
-                            }
-                            else
-                            {
+                        {
+                            <li style="padding: 4px; padding-top: 5px; border: 1px solid white" class="btnRegister">
+                                <a href="/dang-ki" style="color: white; font-weight: bold">Đăng kí</a>
+                            </li>
+                            <li style="padding: 4px; padding-top: 5px; border: 1px solid white"  class="btnRegister">
+                                <a href="/dang-nhap" style="color: white; font-weight: bold">Đăng nhập</a>
+                            </li>
+                        }
+                        else
+                        {
 
-                                <li>
-                                    <button type="button"> <span class="far fa-registered"></span></button>Chào @session.UserName
-                                </li>
-                                <li>
-                                    <button type="button"> <span class="far fa-user"></span></button>@Html.ActionLink("Đăng xuất","Logout","User")
-                                </li>
-                            }
+                            <li>
+                                <button type="button"> <span class="far fa-registered"></span></button>Chào @session.UserName
+                            </li>
+                            <li>
+                                <button type="button"> <span class="far fa-user"></span></button>@Html.ActionLink("Đăng xuất", "Logout", "User")
+                            </li>
+                        }
 
-                        <li>
-                            <a href="/gio-hang"><button type="button" data-toggle="modal" data-target="#"> <span class="fas fa-cart-arrow-down"></span></button></a>
+                        <li style="padding: 4px; padding-top: 5px; border: 1px solid white; width:35px; padding-left:7px" class="btnRegister">
+                            <a style="color: white; font-weight: bold" href="/gio-hang">
+                                <i class="fas fa-cart-arrow-down"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -85,7 +95,7 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     @foreach (var subItem in child)
                                     {
-                                    <a class="nav-link" href="/loai-san-pham/@subItem.ID">@subItem.Text</a>
+                                        <a class="nav-link" href="/loai-san-pham/@subItem.ID">@subItem.Text</a>
                                     }
                                 </div>
                             </li>
@@ -98,7 +108,7 @@
                         }
                     }
                 }
-                
+
             </ul>
         </div>
     </nav>

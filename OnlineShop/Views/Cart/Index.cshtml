@@ -110,25 +110,25 @@
     <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
         <div class="shop_inner_inf">
             <div class="privacy about">
-                <h3>Chec<span>kout</span></h3>
+                <h3>Thanh toán</h3>
                 <div class="checkout-right">
-                    <h4>Your shopping cart contains: <span>@Model.Count Products</span></h4>
+                    <h4>Giỏ hàng bạn đang có: <span>@Model.Count Sản phẩm</span></h4>
                     <table class="timetable_sub">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Product</th>
-                                <th>Quality</th>
-                                <th>Product Name</th>
-                                <th>Price</th>
-                                <th>Remove</th>
+                                @*<th>ID</th>*@
+                                <th>Ảnh sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Giá bán</th>
+                                <th>Loại bỏ</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
                             <tr class="rem1">
-                                <td class="invert">@item.Product.ID</td>
+                                @*<td class="invert">@item.Product.ID</td>*@
                                 <td class="invert-image"><a href="/chi-tiet-san-pham/@item.Product.ID"><img src="@item.Product.Image" alt=" " class="img-responsive"></a></td>
                                 <td class="invert">
                                     <div class="quantity">
@@ -149,7 +149,7 @@
                                     <td class="invert">$@item.Product.PromotionPrice</td>
                                 }
                                 <td class="invert">
-                                    <div class="rem">
+                                    <div class="rem" style="margin-right:15px">
                                         <a href="/xoa-khoi-gio-hang?id=@item.Product.ID"> <div class="close1"> </div></a>
                                     </div>
                                 </td>

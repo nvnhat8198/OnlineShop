@@ -7,9 +7,6 @@
 }
 
 <div class="header-outs" id="home">
-    @*@RenderBody()*@
-    @*@RenderSection("header", required: true)*@
-    @*@RenderPage("~/Views/Shared/Header.cshtml")*@
     @{Html.RenderAction("Header", "Home");}
     <!-- Slideshow 4 -->
     @RenderPage("~/Views/Shared/Slide.cshtml")
@@ -17,7 +14,7 @@
 
 <section class="about py-lg-4 py-md-3 py-sm-3 py-3" id="about">
     <div class="container py-lg-5 py-md-5 py-sm-4 py-4">
-        <h3 class="title text-center mb-lg-5 mb-md-4  mb-sm-4 mb-3">Best Products</h3>
+        <h3 class="title text-center mb-lg-5 mb-md-4  mb-sm-4 mb-3">Sản phẩm tốt nhất</h3>
         <div class="row banner-below-w3l">
             @foreach (var item in listProductPromotion)
             {
@@ -28,19 +25,8 @@
                     </div>
                 </div>
             }
-            @*<div class="col-lg-4 col-md-6 col-sm-6 text-center banner-agile-flowers">
-                <img src="~/Assets/Client/images/a1.jpg" class="img-thumbnail" alt="">
-                <div class="banner-right-icon">
-                    <h4 class="pt-3">Baby Toys</h4>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 mt-3 text-center banner-agile-flowers">
-                <img src="~/Assets/Client/images/a6.jpg" class="img-thumbnail" alt="">
-                <div class="banner-right-icon">
-                    <h4 class="pt-3">Soft Toys</h4>
-                </div>
-            </div>*@
-            <div class="toys-grids-upper">
+         
+            <div class="toys-grids-upper" style="margin-top:100px">
                 <div class="about-toys-off">
                     <h2>Get Up to <span>70% Off </span>On Selected Toys</h2>
                 </div>
@@ -50,9 +36,9 @@
 </section>
 <!-- //about -->
 <!--new Arrivals -->
-<section class="blog py-lg-4 py-md-3 py-sm-3 py-3">
+<section class="blog py-lg-4 py-md-3 py-sm-3 py-3" style="background: powderblue">
     <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
-        <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">New Products</h3>
+        <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Sản phẩm mới</h3>
         <div class="slid-img">
             <ul id="flexiselDemo1">
                 @foreach(var item in listProductNew)
@@ -97,7 +83,7 @@
 </section>
 <!--//about -->
 <!--Customers Review -->
-<section class="clients py-lg-4 py-md-3 py-sm-3 py-3" id="clients">
+@*<section class="clients py-lg-4 py-md-3 py-sm-3 py-3" id="clients">
     <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
         <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Customers Review</h3>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -269,10 +255,10 @@
             </a>
         </div>
     </div>
-</section>
+</section>*@
 <!--//Customers Review -->
 <!-- Product-view -->
-<section class="product py-lg-4 py-md-3 py-sm-3 py-3">
+@*<section class="product py-lg-4 py-md-3 py-sm-3 py-3">
     <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
         <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Latest Toys</h3>
         <div class=" img-toy-w3l-top">
@@ -334,10 +320,10 @@
             </div>
         </div>
     </div>
-</section>
+</section>*@
 <!--//Product-view-->
 <!--//Product-view-->
-<section class="premium py-lg-4 py-md-3 py-sm-3 py-3">
+@*<section class="premium py-lg-4 py-md-3 py-sm-3 py-3">
     <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
         <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Premium Toys</h3>
         <div class="row">
@@ -377,7 +363,7 @@
             <div class="col-lg-6 agileits-toys-left"></div>
         </div>
     </div>
-</section>
+</section>*@
 <!--Product-about-->
 <section class="about py-lg-4 py-md-3 py-sm-3 py-3">
     <div class="container py-lg-5 py-md-5 py-sm-4 py-3">

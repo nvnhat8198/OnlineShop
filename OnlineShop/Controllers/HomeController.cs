@@ -19,7 +19,7 @@ namespace OnlineShop.Controllers
         }
 
         [ChildActionOnly]
-        [OutputCache(Duration =3600*24)]
+        [OutputCache(Duration = 3600 * 24)]
         public ActionResult Header()
         {
             var listMenu = new MenuDao().ListMenu();

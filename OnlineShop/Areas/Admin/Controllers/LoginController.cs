@@ -33,6 +33,7 @@ namespace OnlineShop.Areas.Admin.Controllers
                     var listCredential = dao.GetListCredential(model.UserName);
                     Session.Add(CommonConstants.SESSION_CREDENTIAL, listCredential);
                     Session.Add(CommonConstants.USER_SESSION, userSession);
+                    ViewBag.UserCurrent = userSession;
                     return RedirectToAction("Index", "Home");
                 }
                 else if (result == 0)

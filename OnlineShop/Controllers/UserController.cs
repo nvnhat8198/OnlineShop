@@ -25,7 +25,7 @@ namespace OnlineShop.Controllers
         }
 
         [HttpPost]
-        [CaptchaValidation("CaptchaCode","registerCaptcha","Mã xác nhận không đúng")]
+        //[CaptchaValidation("CaptchaCode","registerCaptcha","Mã xác nhận không đúng")]
         public ActionResult Register(RegisterModel model)
         {
             if (ModelState.IsValid)
@@ -95,7 +95,8 @@ namespace OnlineShop.Controllers
                     userSession.UserName = user.UserName;
                     userSession.UserID = user.ID;
                     Session.Add(CommonConstants.USER_SESSION, userSession);
-                    return Redirect("/");
+                    return RedirectToAction("Index", "Home");
+                 //   return Redirect("/");
                 }
                 else if (result == 0)
                 {
