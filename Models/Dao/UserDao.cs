@@ -124,12 +124,12 @@ namespace Models.Dao
             try
             {
                 var user = db.Users.Find(entity.ID);
-                entity.Name = user.Name;
-                entity.Email = user.Email;
-                entity.Address = user.Address;
-                entity.Phone = user.Phone;
-                entity.ModifieBy = user.ModifieBy;
-                entity.ModifieDate = DateTime.Now;
+                user.Name = entity.Name;
+                user.Email = entity.Email;
+                user.Address = entity.Address;
+                user.Phone = entity.Phone;
+                user.ModifieBy = entity.ModifieBy;
+                user.ModifieDate = DateTime.Now;
                 db.SaveChanges();
                 return true;
             }

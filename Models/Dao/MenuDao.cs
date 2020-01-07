@@ -24,5 +24,39 @@ namespace Models.Dao
         {
             return db.Menus.Where(x => x.Status == true && x.TypeID > 0).ToList();
         }
+        public bool InsertCategoryProduct(Menu model)
+        {
+            try
+            {
+                db.Menus.Add(model);
+                db.SaveChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+           
+        }
+
+        public Menu ViewDetail(int id)
+        {
+            return db.Menus.Find(id);
+        }
+
+        public bool Update(Menu entity)
+        {
+            try
+            {
+                var menu = db.Menus.Find(entity.ID);
+                menu.Text = entity.Text;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace OnlineShop.Areas.Admin.Controllers
     public class ProductController : BaseController
     {
         // GET: Admin/Product
+        [HasCredential(RoleID = "VIEW_USER")]
         public ActionResult Index()
         {
             var model = new ProductDao().getAllProduct();
@@ -49,6 +50,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [HasCredential(RoleID = "VIEW_USER")]
         public ActionResult Create()
         {
             return View();
@@ -73,6 +75,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [HasCredential(RoleID = "VIEW_USER")]
         public ActionResult Edit(long id)
         {
             var model = new ProductDao().DetailProduct(id);

@@ -49,6 +49,7 @@ namespace OnlineShop.Controllers
                     user.Phone = model.Phone;
                     user.Address = model.Address;
                     user.CreatedDate = DateTime.Now;
+                    user.GroupID = "MEMBER";
                     user.Status = true;
                     if (!string.IsNullOrEmpty(model.ProvinceID))
                     {
@@ -95,8 +96,8 @@ namespace OnlineShop.Controllers
                     userSession.UserName = user.UserName;
                     userSession.UserID = user.ID;
                     Session.Add(CommonConstants.USER_SESSION, userSession);
-                    return RedirectToAction("Index", "Home");
-                 //   return Redirect("/");
+                    //return RedirectToAction("Index", "Home");
+                    return Redirect("/");
                 }
                 else if (result == 0)
                 {

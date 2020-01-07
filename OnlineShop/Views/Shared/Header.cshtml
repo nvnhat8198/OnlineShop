@@ -49,19 +49,22 @@
                             <li style="padding: 4px; padding-top: 5px; border: 1px solid white" class="btnRegister">
                                 <a href="/dang-ki" style="color: white; font-weight: bold">Đăng kí</a>
                             </li>
-                            <li style="padding: 4px; padding-top: 5px; border: 1px solid white"  class="btnRegister">
+                            <li style="padding: 4px; padding-top: 5px; border: 1px solid white" class="btnRegister">
                                 <a href="/dang-nhap" style="color: white; font-weight: bold">Đăng nhập</a>
                             </li>
                         }
                         else
                         {
+                            <li style="padding: 4px; padding-top: 5px; border: 1px solid white" class="btnRegister">
+                                <a href="javascript:void(0)" style="color: white; font-weight: bold">Chào @session.UserName</a>
+                            </li>
 
-                            <li>
-                                <button type="button"> <span class="far fa-registered"></span></button>Chào @session.UserName
+                            <li style="padding: 4px; padding-top: 5px; border: 1px solid white" class="btnRegister">
+                                <a href="javascript:void(0)" style="color: white; font-weight: bold"><i class="fa fa-sign-out-alt"></i>@Html.ActionLink("Thoát", "Logout", "User")</a>
                             </li>
-                            <li>
-                                <button type="button"> <span class="far fa-user"></span></button>@Html.ActionLink("Đăng xuất", "Logout", "User")
-                            </li>
+                            @*<li>
+                                <button type="button"> <span class="far glyphicon-log-out"></span></button>@Html.ActionLink("Đăng xuất", "Logout", "User")
+                            </li>*@
                         }
 
                         <li style="padding: 4px; padding-top: 5px; border: 1px solid white; width:35px; padding-left:7px" class="btnRegister">

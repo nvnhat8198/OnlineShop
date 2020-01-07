@@ -42,6 +42,9 @@ namespace OnlineShop.Areas.Admin.Controllers
                     var newPass = Encryptor.MD5Hash(user.Password);
                     user.Password = newPass;
                 }
+                user.GroupID = "ADMIN";
+                user.CreatedDate = DateTime.Now;
+                user.Status = true;
                 long id = dao.Insert(user);
                 if (id > 0)
                 {
