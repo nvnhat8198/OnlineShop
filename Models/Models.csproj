@@ -90,9 +90,14 @@
     <Compile Include="FE\User.cs" />
     <Compile Include="FE\UserGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimKiem.cs" />
+    <Compile Include="TimKiemTheoGia.cs" />
+    <Compile Include="TimKiemTheoMoTa.cs" />
+    <Compile Include="TimKiemTheoTen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

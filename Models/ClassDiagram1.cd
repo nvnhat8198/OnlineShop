@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Models.Dao.CategoryDao" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dao\CategoryDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.Dao.ContentDao" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Dao\ContentDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.Dao.FeedbackDao" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dao\FeedbackDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.Dao.MenuDao" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACAAAQEACAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dao\MenuDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.Dao.OrderDao" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAQAAAAAAAAAAAAAAQAAAAAAACAAABAAAA=</HashCode>
+      <FileName>Dao\OrderDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.Dao.OrderDetailDao" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dao\OrderDetailDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.Dao.ProductDao" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQACAAQAAASAAAAQQAAAAAAAAUAAAAAAgAIAAAgAAQ=</HashCode>
+      <FileName>Dao\ProductDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.Dao.UserDao" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEACAAAQAAACAAAAAAAAABUAAAAKAAAQggAAIEA=</HashCode>
+      <FileName>Dao\UserDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.About" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAEAAAggAAAgAQAAAQAAAAAABAAAgAAAAKACAE=</HashCode>
+      <FileName>FE\About.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.Category" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAECAAAgAAAAAQAAAQAAgAAAAAAAgAAgAKAAAE=</HashCode>
+      <FileName>FE\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.Contact" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FE\Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.Content" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAGAAAghAAAgAQAAAQAAAABAFAAAkAAAAKACAE=</HashCode>
+      <FileName>FE\Content.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.ContentTag" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAEAAAAAAAAAA=</HashCode>
+      <FileName>FE\ContentTag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.Credential" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>FE\Credential.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.Feedback" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAiAAgAAAAAAAAAQAAAAAAAACAAABIAAAAAA=</HashCode>
+      <FileName>FE\Feedback.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.Footer" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FE\Footer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.Menu" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAEAAAAgAAAAAAAACAAAAAAAAAgAAAASAAAAAA=</HashCode>
+      <FileName>FE\Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.MenuType" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FE\MenuType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.OnlineShopDbContext" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAEAACCAABAAgAUAABACAAAAkgAEEEAAAAAAEARABAQ=</HashCode>
+      <FileName>FE\OnlineShopDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.Order" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEBAAAgAAAAAAQAAAAEAAAAgAAAgAEAAAAAAA=</HashCode>
+      <FileName>FE\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.OrderDetail" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAABAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAgAAIAAA=</HashCode>
+      <FileName>FE\OrderDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.Product" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAGAQAghAAAwAQgAAQAAAABABAABkAAgAKgCAE=</HashCode>
+      <FileName>FE\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.ProductCategory" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAECAAAgAAAAAQAAAQAAgAAAAAAAgAAgAKAAAE=</HashCode>
+      <FileName>FE\ProductCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.Role" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FE\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.Slide" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAEAAAggAAAgAQAAAAAAAAAABAAAgAAQACAAAA=</HashCode>
+      <FileName>FE\Slide.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.sysdiagram" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAAAAAAAAAAAAQAAAFAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FE\sysdiagram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.SystemConfig" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAgAAAAAAAAAQAAAAAAAAAAQAgAAAAAAA=</HashCode>
+      <FileName>FE\SystemConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.Tag" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FE\Tag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.User" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEACAAgAAAgAwAAAQAAAAAAAACAwAAIBCAAAA=</HashCode>
+      <FileName>FE\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.FE.UserGroup" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FE\UserGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.TimKiemTheoTen">
+    <Position X="7.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>TimKiemTheoTen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.TimKiemTheoGia">
+    <Position X="4.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>TimKiemTheoGia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.TimKiemTheoMoTa">
+    <Position X="1" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>TimKiemTheoMoTa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models.TimKiem">
+    <Position X="4.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>TimKiem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

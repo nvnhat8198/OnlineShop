@@ -132,26 +132,25 @@
                         }
                     </p>
 
-                    <div class="description">
+                    @*<div class="description">
                         <h5>Check delivery, payment options and charges at your location</h5>
                         <form action="#" method="post">
                             <input class="form-control" type="text" name="Email" placeholder="Please enter..." required="">
                             <input type="submit" value="Check">
                         </form>
-                    </div>
+                    </div>*@
                     <div class="color-quality">
                         <div class="color-quality-right">
                             <h5>Size :</h5>
                             <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-                                <option value="null">2 Feet</option>
-                                <option value="null">3 Feet</option>
-                                <option value="null">4 Feet</option>
-                                <option value="null">5 Feet</option>
+                                <option value="null">Nhỏ</option>
+                                <option value="null">Vừa</option>
+                                <option value="null">Lớn</option>
                             </select>
                         </div>
                     </div>
                     <div class="occasional">
-                        <h5>Types :</h5>
+                        <h5>Loại :</h5>
                         <div class="colr ert">
                             <label class="radio"><input type="radio" name="radio" checked=""><i></i> @Model.Name (Black)</label>
                         </div>
@@ -175,13 +174,13 @@
                 <div class="responsive_tabs">
                     <div id="horizontalTab">
                         <ul class="resp-tabs-list">
-                            <li>Description</li>
+                            <li>Mô tả sản phẩm</li>
                         </ul>
                         <div class="resp-tabs-container">
                             <!--/tab_one-->
                             <div class="tab1">
                                 <div class="single_page">
-                                    <h6>Lorem ipsum dolor sit amet</h6>
+                                    <h6>Tóm tắt thông tin</h6>
                                     <p>
                                         @Model.Description
                                     </p>
