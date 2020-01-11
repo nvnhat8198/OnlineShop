@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var OrderID = ViewBag.OrderID;
+}
+
+
+
+@model List<Models.FE.OrderDetail>
+
+
+@section cssAdminHeader{
+    <!-- Custom styles for this page -->
+    <link href="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+}
+@section jsFooter{
+    <!-- Page level plugins -->
+    <script src="~/Assets/Admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="~/Assets/Admin/js/demo/datatables-demo.js"></script>
+    <script src="~/Assets/Admin/js/controller/productController.js"></script>
+}
+
+@section header{
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách Sản phẩm trong đơn hàng có mã @OrderID</h6>
+    </div>
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Mã sản phẩm</th>
+                        <th>Tên sản phẩm</th>
+                        <th style="text-align:center">Số lượng</th>
+                        <th style="text-align:center">Giá 1 sản phẩm</th>
+                        <th style="text-align:center">Tổng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ProductID</td>
+                            <td>@item.ProductName</td>
+                            <td style="text-align:center">@item.Quantity</td>
+                            <td style="text-align:center">@item.Price</td>
+                            <td style="text-align:center">@(item.Quantity * item.Price)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -158,20 +158,22 @@ namespace OnlineShop.Controllers
                     {
                         orderDetail.Price = item.Product.PromotionPrice;
                     }
+                    var Product = new ProductDao().DetailProduct(orderDetail.ProductID);
+                    orderDetail.ProductName = Product.Name;
                     orderDetail.Quantity = item.Quantity;
                     orderDetailDao.Insert(orderDetail);
 
                     total += (orderDetail.Price.GetValueOrDefault(0) * item.Quantity);
                 }
-                string content = System.IO.File.ReadAllText(Server.MapPath("~/Assets/Client/template/neworder.html"));
-                content = content.Replace("{{CustomerName}}", shipName);
-                content = content.Replace("{{Phone}}", mobile);
-                content = content.Replace("{{Email}}", email);
-                content = content.Replace("{{Address}}", address);
-                content = content.Replace("{{Total}}", total.ToString());
-                var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
-                new MailHelper().SendMail(email, "Đơn hàng mới từ OnlineShop", content);
-                new MailHelper().SendMail(toEmail, "Đơn hàng mới từ OnlineShop", content);
+                //string content = System.IO.File.ReadAllText(Server.MapPath("~/Assets/Client/template/neworder.html"));
+                //content = content.Replace("{{CustomerName}}", shipName);
+                //content = content.Replace("{{Phone}}", mobile);
+                //content = content.Replace("{{Email}}", email);
+                //content = content.Replace("{{Address}}", address);
+                //content = content.Replace("{{Total}}", total.ToString());
+                //var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
+                //new MailHelper().SendMail(email, "Đơn hàng mới từ OnlineShop", content);
+                //new MailHelper().SendMail(toEmail, "Đơn hàng mới từ OnlineShop", content);
 
                 Session[CartSession] = null;
             }

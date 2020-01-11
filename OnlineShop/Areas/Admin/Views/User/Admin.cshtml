@@ -1,7 +1,7 @@
 ﻿@*@model PagedList.IPagedList<Models.FE.User>*@
 @using PagedList.Mvc
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Admin";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -25,12 +25,31 @@
 }
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Danh sách người dùng</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách Admin</h6>
     </div>
     <div class="card-body">
         @using (Html.BeginForm("Index", "User", FormMethod.Get))
         {
-            
+            <div class="form-group row">
+                @*<div class="col-sm-6 mb-3 mb-sm-0">*@
+                @*<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" name="searchString" value="@ViewBag.searchString" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+                    </form>*@
+                @*</div>*@
+                <a class="btn btn-primary mb-3 ml-2 mb-sm-0" href="/Admin/User/Create">
+                    <i class="fa fa-plus"></i>
+                    Thêm mới Admin
+                </a>
+            </div>
         }
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

@@ -192,7 +192,12 @@ namespace Models.Dao
 
         public List<User> getListUser()
         {
-            return db.Users.ToList();
+            return db.Users.Where(x=>x.GroupID=="MEMBER").ToList();
+        }
+
+        public List<User> getListAdmin()
+        {
+            return db.Users.Where(x => x.GroupID == "ADMIN").ToList();
         }
     }
 }

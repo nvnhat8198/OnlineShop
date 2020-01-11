@@ -14,6 +14,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         // GET: Admin/Login
         public ActionResult Index()
         {
+            Session[CommonConstants.USER_SESSION] = null;
             return View();
         }
 

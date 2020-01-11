@@ -44,7 +44,7 @@ namespace Models.FE
 
         public int? Warranty { get; set; }
 
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         [StringLength(50)]
         public string CreateBy { get; set; }

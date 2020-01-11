@@ -23,6 +23,16 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(model_1);
         }
 
+        [HasCredential(RoleID = "VIEW_USER")]
+        public ActionResult Admin(string searchString, int page = 1, int pageSize = 10)
+        {
+            var dao = new UserDao();
+            var model = dao.listAllPaging(searchString, page, pageSize);
+            ViewBag.searchString = searchString;
+
+            var model_1 = new UserDao().getListAdmin();
+            return View(model_1);
+        }
 
         [HttpGet]
         [HasCredential(RoleID = "ADD_USER")]
@@ -48,8 +58,8 @@ namespace OnlineShop.Areas.Admin.Controllers
                 long id = dao.Insert(user);
                 if (id > 0)
                 {
-                    SetAlert("Thêm User thành công!", "success");
-                    return RedirectToAction("Index", "User");
+                    SetAlert("Thêm Admin thành công!", "success");
+                    return RedirectToAction("Admin", "User");
                 }
                 else
                 {

@@ -18,23 +18,35 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
     <!-- Heading -->
-    @*<div class="sidebar-heading">
-            Interface
-        </div>*@
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+    @*<li class="nav-item">
         <a class="nav-link" href="/Admin/User/Index">
             <i class="fas fa-fw fa-user-alt"></i>
             <span>Người dùng</span>
         </a>
-    </li>
+    </li>*@
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/Admin/Order/Index">
             <i class="fas fa-fw fa-cart-plus"></i>
             <span>Đơn hàng</span>
         </a>
     </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo3" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-user-alt"></i>
+            <span>Danh sách User</span>
+        </a>
+        <div id="collapseTwo3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="/Admin/User/Index">Người dùng</a>
+                <a class="collapse-item" href="/Admin/User/Admin">Admin</a>
+            </div>
+        </div>
+    </li>
+
+
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo2" aria-expanded="true" aria-controls="collapseTwo">
@@ -44,22 +56,10 @@
         <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="/Admin/Product/Index">Danh sách sản phẩm</a>
-                <a class="collapse-item" href="/Admin/Category/Index" ">Loại sản phẩm</a>
+                <a class="collapse-item" href="/Admin/Category/Index">Loại sản phẩm</a>
             </div>
         </div>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo3" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-tasks"></i>
-            <span>Quản lý chung</span>
-        </a>
-        <div id="collapseTwo3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Admin</a>
-                <a class="collapse-item" href="#">Admin</a>
-            </div>
-        </div>
-    </li>
 
 </ul>

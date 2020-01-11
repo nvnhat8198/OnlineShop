@@ -22,5 +22,8 @@ namespace Models.FE
         public int? Quantity { get; set; }
 
         public decimal? Price { get; set; }
+
+        [StringLength(255)]
+        public string ProductName { get; set; }
     }
 }

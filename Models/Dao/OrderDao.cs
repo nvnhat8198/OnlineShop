@@ -21,6 +21,16 @@ namespace Models.Dao
             db.SaveChanges();
             return order.ID;
         }
+
+        public List<Order> ListOrder()
+        {
+            return db.Orders.ToList();
+        }
+
+        public List<OrderDetail> ListOrderDetail(long id)
+        {
+            return db.OrderDetails.Where(x => x.OrderID == id).ToList();
+        }
     }
-        
+
 }
