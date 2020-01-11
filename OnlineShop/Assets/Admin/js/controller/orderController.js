@@ -1,23 +1,23 @@
-﻿var user = {
+﻿var order = {
     init: function () {
-        user.registerEvents();
+        order.registerEvents();
     },
     registerEvents: function () {
-        $('.btn-active').off('click').on('click', function (e) {
+        $('.btn-changestatus').off('click').on('click', function (e) {
             e.preventDefault();
             var btn = $(this);
             var id = $(this).data('id');
             $.ajax({
-                url: "/Admin/User/ChangeStatus",
+                url: "/Admin/Order/ChangeStatus",
                 data: { id: id },
                 dataType: "json",
                 type: "POST",
                 success: function (response) {
-                    if (response.Status == true) {
-                        btn.text('Hoạt động');
+                    if (response.Status == false) {
+                        btn.text('Chưa xuất');
                     }
                     else {
-                        btn.text('Khóa');
+                        btn.text('Đã xuất');
                     }
                 }
             });
@@ -25,4 +25,4 @@
     }
 }
 
-user.init();
+order.init();

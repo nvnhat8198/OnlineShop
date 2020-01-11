@@ -31,6 +31,15 @@ namespace Models.Dao
         {
             return db.OrderDetails.Where(x => x.OrderID == id).ToList();
         }
+
+
+        public bool ChangeStatus(long id)
+        {
+            var order = db.Orders.Find(id);
+            order.Status = !order.Status;
+            db.SaveChanges();
+            return order.Status;
+        }
     }
 
 }

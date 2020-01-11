@@ -139,6 +139,7 @@ namespace OnlineShop.Controllers
             order.ShipName = shipName;
             order.ShipMobile = mobile;
             order.ShipEmail = email;
+            order.Status = false;
             try
             {
                 var id = new OrderDao().Insert(order);

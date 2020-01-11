@@ -27,6 +27,6 @@ namespace Models.FE
         [StringLength(50)]
         public string ShipEmail { get; set; }
 
-        public bool? Status { get; set; }
+        public bool Status { get; set; }
     }
 }

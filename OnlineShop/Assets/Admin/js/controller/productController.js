@@ -16,7 +16,7 @@
                 type: "POST",
                 success: function (response) {
                     if (response.Status == true) {
-                        btn.text('Kích hoạt');
+                        btn.text('Hoạt động');
                     }
                     else {
                         btn.text('Khóa');
