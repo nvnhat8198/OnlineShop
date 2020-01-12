@@ -26,5 +26,11 @@ namespace OnlineShop.Controllers
             var listMenu = new MenuDao().ListMenu();
             return PartialView(listMenu);
         }
+
+
+        public ActionResult PageNotFound()
+        {
+            return View();
+        }
     }
 }

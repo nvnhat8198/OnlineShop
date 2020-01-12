@@ -187,6 +187,7 @@
     <Content Include="Assets\Admin\css\sb-admin-2.css" />
     <Content Include="Assets\Admin\css\sb-admin-2.min.css" />
     <Content Include="Assets\Admin\img\DashboardIMG.png" />
+    <Content Include="Assets\Admin\img\PageNotFound.jpg" />
     <Content Include="Assets\Admin\img\undraw_posting_photo.svg" />
     <Content Include="Assets\Admin\img\user.png" />
     <Content Include="Assets\Admin\img\welcome.png" />
@@ -3177,6 +3178,7 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\Product\Search.cshtml" />
     <Content Include="Views\Shared\401.cshtml" />
+    <Content Include="Views\Home\PageNotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
