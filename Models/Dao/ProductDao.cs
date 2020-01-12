@@ -9,6 +9,16 @@ namespace Models.Dao
 {
     public class ProductDao
     {
+        // Quản lý tìm kiếm theo các yêu cầu
+        private static TimKiem[] listTK = new TimKiem[]{
+            new TimKiemTheoGia(),
+            new TimKiemTheoMoTa(),
+            new TimKiemTheoTen()
+        };
+        private TimKiem tk = listTK[2];
+
+
+
         OnlineShopDbContext db = null;
         public ProductDao()
         {
@@ -34,7 +44,7 @@ namespace Models.Dao
         {
             //DateTime tmp = DateTime.Now.AddDays(-5);
             //return db.Products.Where(x=>x.Status==true && DateTime.Compare(tmp, x.CreatedDate)<0).ToList();
-            return db.Products.Where(x => x.Status == true).OrderByDescending(x => x.CreatedDate).Take(5).ToList();
+            return db.Products.Where(x => x.Status == true).OrderByDescending(x => x.CreatedDate).Take(7).ToList();
         }
 
         public Menu ProductType(long id)
@@ -49,7 +59,8 @@ namespace Models.Dao
 
         public List<Product>Search(string keyword, ref int totalRecord, int pageIndex=1, int pageSize=1)
         {
-            var model = db.Products.Where(x => x.Name.Contains(keyword));
+            //var model = db.Products.Where(x => x.Name.Contains(keyword));
+            var model = tk.Search(keyword);
             totalRecord = model.Count();
             model.OrderByDescending(x => x.CreatedDate).Skip((pageIndex - 1) * pageSize).Take(pageSize);
             return model.ToList();
