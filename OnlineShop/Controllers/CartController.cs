@@ -26,7 +26,8 @@ namespace OnlineShop.Controllers
             {
                 list = (List<CartItem>)cart;
             }
-
+            var listMenu = new MenuDao().ListMenu();
+            ViewBag.listMenu = listMenu;
             return View(list);
         }
 

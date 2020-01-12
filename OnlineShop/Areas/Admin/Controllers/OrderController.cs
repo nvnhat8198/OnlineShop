@@ -10,6 +10,7 @@ namespace OnlineShop.Areas.Admin.Controllers
     public class OrderController : Controller
     {
         // GET: Admin/Order
+        [HasCredential(RoleID = "EDIT_USER")]
         public ActionResult Index()
         {
             var model = new OrderDao().ListOrder();
@@ -17,7 +18,6 @@ namespace OnlineShop.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [HasCredential(RoleID = "EDIT_USER")]
         public JsonResult ChangeStatus(long id)
         {
             var result = new OrderDao().ChangeStatus(id);

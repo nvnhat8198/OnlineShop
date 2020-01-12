@@ -13,7 +13,8 @@ namespace OnlineShop.Controllers
         // GET: Contact
         public ActionResult Index()
         {
-            return View();
+            var listMenu = new MenuDao().ListMenu();
+            return View(listMenu);
         }
 
         [HttpPost]

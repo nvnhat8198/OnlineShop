@@ -15,6 +15,8 @@ namespace OnlineShop.Controllers
         {
             var model = new ProductDao().ListProduct(id);
             ViewBag.productType = new ProductDao().ProductType(id);
+            var listMenu = new MenuDao().ListMenu();
+            ViewBag.listMenu = listMenu;
             return View(model);
         }
     }

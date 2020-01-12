@@ -11,6 +11,7 @@ namespace OnlineShop.Areas.Admin.Controllers
     public class OrderDetailController : Controller
     {
         // GET: Admin/OrderDetail
+        [HasCredential(RoleID = "EDIT_USER")]
         public ActionResult Index(long id)
         {
             var model = new OrderDao().ListOrderDetail(id);

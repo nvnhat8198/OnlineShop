@@ -13,6 +13,8 @@ namespace OnlineShop.Controllers
         public ActionResult Index(long ID)
         {
             var model = new ProductDao().DetailProduct(ID);
+            var listMenu = new MenuDao().ListMenu();
+            ViewBag.listMenu = listMenu;
             return View(model);
         }
 
@@ -42,6 +44,8 @@ namespace OnlineShop.Controllers
             ViewBag.Last = totalPage;
             ViewBag.Next = page + 1;
             ViewBag.Prev = page - 1;
+            var listMenu = new MenuDao().ListMenu();
+            ViewBag.listMenu = listMenu;
             return View(model);
         }
     }

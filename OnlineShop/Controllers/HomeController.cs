@@ -15,7 +15,8 @@ namespace OnlineShop.Controllers
         {
             ViewBag.listProductPromotion = new ProductDao().ListProductPromotion();
             ViewBag.listProductNew = new ProductDao().ListProductNew();
-            return View();
+            var listMenu = new MenuDao().ListMenu();
+            return View(listMenu);
         }
 
         [ChildActionOnly]

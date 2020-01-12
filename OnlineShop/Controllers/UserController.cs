@@ -21,7 +21,14 @@ namespace OnlineShop.Controllers
         [HttpGet]
         public ActionResult Register()
         {
-            return View();
+            if (Session[CommonConstants.USER_SESSION] == null)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/");
+            }
         }
 
         [HttpPost]
@@ -79,10 +86,17 @@ namespace OnlineShop.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View();
+            if (Session[CommonConstants.USER_SESSION] == null)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/");
+            }
         }
 
-        [HttpPost]
+        //[HttpPost]
         public ActionResult Login(LoginModel model)
         {
             if (ModelState.IsValid)
@@ -95,6 +109,7 @@ namespace OnlineShop.Controllers
                     var userSession = new UserLogin();
                     userSession.UserName = user.UserName;
                     userSession.UserID = user.ID;
+                    userSession.GroupID = user.GroupID;
                     Session.Add(CommonConstants.USER_SESSION, userSession);
                     //return RedirectToAction("Index", "Home");
                     return Redirect("/");
