@@ -295,3 +295,75 @@
     </div>
 </section>
 
+
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Người nhận</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="register-form">
+
+                    @{
+                        var session1 = (UserLogin)Session[OnlineShop.Common.CommonConstants.USER_SESSION];
+                    }
+
+                    @if (session1 == null)
+                    {
+                        using (Html.BeginForm("Payment", "Cart", FormMethod.Post))
+                        {
+
+                            <div class="fields-grid">
+                                <div class="styled-input">
+                                    <input type="text" placeholder="Người nhận" name="shipName" required="">
+                                </div>
+                                <div class="styled-input">
+                                    <input type="text" placeholder="SĐT" name="mobile" required="">
+                                </div>
+                                <div class="styled-input">
+                                    <input type="email" placeholder="Email" name="email" required="">
+                                </div>
+                                <div class="styled-input">
+                                    <input type="text" placeholder="Địa chỉ" name="address" required="">
+                                </div>
+                                <button type="submit" class="btn subscrib-btnn">Hoàn tất</button>
+                            </div>
+                        }
+
+                    }
+                    else
+                    {
+                        using (Html.BeginForm("Payment", "Cart", FormMethod.Post))
+                        {
+
+                            <div class="fields-grid">
+                                <div class="styled-input">
+                                    <input type="text" placeholder="Người nhận" name="shipName" required="" value="@session1.ShipName">
+                                </div>
+                                <div class="styled-input">
+                                    <input type="text" placeholder="SĐT" name="mobile" required="" value="@session1.ShipMobile">
+                                </div>
+                                <div class="styled-input">
+                                    <input type="email" placeholder="Email" name="email" required="" value="@session1.ShipEmail">
+                                </div>
+                                <div class="styled-input">
+                                    <input type="text" placeholder="Địa chỉ" name="address" required="" value="@session1.ShipAddress">
+                                </div>
+                                <button type="submit" class="btn subscrib-btnn">Hoàn tất</button>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

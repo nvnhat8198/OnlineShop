@@ -23,6 +23,8 @@ namespace OnlineShop.Controllers
         {
             if (Session[CommonConstants.USER_SESSION] == null)
             {
+                var listMenu = new MenuDao().ListMenu();
+                ViewBag.listMenu = listMenu;
                 return View();
             }
             else
@@ -88,6 +90,8 @@ namespace OnlineShop.Controllers
         {
             if (Session[CommonConstants.USER_SESSION] == null)
             {
+                var listMenu = new MenuDao().ListMenu();
+                ViewBag.listMenu = listMenu;
                 return View();
             }
             else
@@ -110,6 +114,13 @@ namespace OnlineShop.Controllers
                     userSession.UserName = user.UserName;
                     userSession.UserID = user.ID;
                     userSession.GroupID = user.GroupID;
+
+                    //
+                    userSession.ShipName = user.Name;
+                    userSession.ShipMobile = user.Phone;
+                    userSession.ShipEmail = user.Email;
+                    userSession.ShipAddress = user.Address;
+
                     Session.Add(CommonConstants.USER_SESSION, userSession);
                     //return RedirectToAction("Index", "Home");
                     return Redirect("/");

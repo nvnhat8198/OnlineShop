@@ -1,25 +1,139 @@
 ﻿@model OnlineShop.Models.RegisterModel
 @using BotDetect.Web.Mvc;
-<link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css"/>
+<link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css" />
 
 @{ MvcCaptcha registerCaptcha = new MvcCaptcha("SampleCaptcha");}
 
 @{
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var listMenu = (List<Models.FE.Menu>)ViewBag.listMenu;
 }
 
 @section jsFooter{
     <script src="~/Assets/Client/js/controller/userController.js"></script>
+}
+<style>
+    .btnRegister:hover {
+        background-color: #888888;
     }
 
+    .btnRegister {
+        margin-right: 20px;
+    }
+</style>
+
 <div class="header-outs" id="home">
-    @*@RenderBody()*@
-    @*@RenderSection("header", required: true)*@
-    @*@RenderPage("~/Views/Shared/Header.cshtml")*@
-    @{Html.RenderAction("Header", "Home");}
-    <!-- Slideshow 4 -->
+    @*@{Html.RenderAction("Header", "Home");}*@
+    <div class="header-bar">
+        <div class="info-top-grid" style="padding: 7px">
+            <div class="info-contact-agile">
+                <ul>
+                    <li>
+                        <span class="fas fa-phone-volume"></span>
+                        <p>+(000)123 4565 32</p>
+                    </li>
+                    <li>
+                        <span class="fas fa-envelope"></span>
+                        <p><a href="mailto:info@gmail.com">info@gmail.com</a></p>
+                    </li>
+                    <li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="hedder-up row">
+                <div class="col-lg-3 col-md-3 logo-head">
+                    <h1><a class="navbar-brand" href="/">Toys-Shop</a></h1>
+                </div>
+                <div class="col-lg-5 col-md-6 search-right">
+                    <form class="form-inline my-lg-0" action="/tim-kiem" method="get">
+                        <input class="form-control mr-sm-2" type="search" name="keyword" id="txtKeyword" placeholder="Search">
+                        <button class="btn" type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="col-lg-4 col-md-3 right-side-cart">
+                    <div class="cart-icons">
+                        <ul>
+                            @{
+                                var session = (UserLogin)Session[OnlineShop.Common.CommonConstants.USER_SESSION];
+                            }
+
+                            @if (session == null)
+                            {
+                                <li style="padding: 4px; padding-top: 5px; border: 1px solid white" class="btnRegister">
+                                    <a href="/dang-ki" style="color: white; font-weight: bold">Đăng kí</a>
+                                </li>
+                                <li style="padding: 4px; padding-top: 5px; border: 1px solid white" class="btnRegister">
+                                    <a href="/dang-nhap" style="color: white; font-weight: bold">Đăng nhập</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li style="padding: 4px; padding-top: 5px; border: 1px solid white" class="btnRegister">
+                                    <a href="javascript:void(0)" style="color: white; font-weight: bold">Chào @session.UserName</a>
+                                </li>
+
+                                <li style="padding: 4px; padding-top: 5px; border: 1px solid white" class="btnRegister">
+                                    <a href="javascript:void(0)" class="linkLougout" style="color: white; font-weight: bold"><i class="fa fa-sign-out-alt"></i>@Html.ActionLink("Thoát", "Logout", "User")</a>
+                                </li>
+                                @*<li>
+                                        <button type="button"> <span class="far glyphicon-log-out"></span></button>@Html.ActionLink("Đăng xuất", "Logout", "User")
+                                    </li>*@
+                            }
+
+                            <li style="padding: 4px; padding-top: 5px; border: 1px solid white; width:35px; padding-left:7px" class="btnRegister">
+                                <a style="color: white; font-weight: bold" href="/gio-hang">
+                                    <i class="fas fa-cart-arrow-down"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav ">
+                    @foreach (var item in listMenu)
+                    {
+                        if (item.TypeID == 0)
+                        {
+                            var child = listMenu.Where(x => x.TypeID == item.ID);
+                            var count = child.Count();
+                            if (count > 0)
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="@item.Link" target="@item.Target" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        @item.Text
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        @foreach (var subItem in child)
+                                        {
+                                            <a class="nav-link" href="/loai-san-pham/@subItem.ID">@subItem.Text</a>
+                                        }
+                                    </div>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="@item.Link" target="@item.Target">@item.Text <span class="sr-only"></span></a>
+                                </li>
+                            }
+                        }
+                    }
+
+                </ul>
+            </div>
+        </nav>
+    </div>
 </div>
+
 
 <!-- banner -->
 <div class="inner_page-banner one-img">
@@ -45,75 +159,75 @@
         <div class="contact-list-grid">
 
 
-            @using (Html.BeginForm("Register","User",FormMethod.Post))
+            @using (Html.BeginForm("Register", "User", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
 
-            <div class="form-horizontal">
-                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-                @if (ViewBag.Success != null)
-                {
-                    <div class="alert alert-success">@ViewBag.Success</div>
-                }
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                    @if (ViewBag.Success != null)
+                    {
+                        <div class="alert alert-success">@ViewBag.Success</div>
+                    }
 
 
-                <div class="form-group contact-forms">
-                    @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @name = "username", @placeholder = "UserName" })
-                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                    <div class="form-group contact-forms">
+                        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @name = "username", @placeholder = "UserName" })
+                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group contact-forms">
+                        @Html.PasswordFor(model => model.Password, new { @class = "form-control", @name = "password", @placeholder = "Password" })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group contact-forms">
+                        @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control", @name = "confirmpassword", @placeholder = "ConfirmPassword" })
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group contact-forms">
+                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @name = "name", @placeholder = "Name" })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group contact-forms">
+                        @Html.TextBoxFor(model => model.Address, new { @class = "form-control", @name = "address", @placeholder = "Address" })
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group contact-forms">
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @name = "email", @placeholder = "Email" })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group contact-forms">
+                        @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", @name = "phone", @placeholder = "Phone" })
+                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group contact-forms">
+                        @Html.DropDownList("ProvinceID", new SelectList(new string[] { }), new { @class = "form-control", @id = "ddlProvince", @name = "province", @placeholder = "Province" })
+                        @Html.ValidationMessageFor(model => model.ProvinceID, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group contact-forms">
+                        @Html.DropDownList("DistrictID", new SelectList(new string[] { }), new { @class = "form-control", @id = "ddlDistrict", @name = "district", @placeholder = "District" })
+                        @Html.ValidationMessageFor(model => model.DistrictID, "", new { @class = "text-danger" })
+                    </div>
+
+                    @*<div class="form-group contact-forms">
+                            @Html.Captcha(registerCaptcha)
+                            @Html.TextBox("CaptchaCode")
+                        </div>*@
+                    <button type="submit" class="btn btn-block sent-butnn">Đăng kí</button>
+
+                    @*<div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" class="btn btn-default" />
+                            </div>
+                        </div>*@
+
                 </div>
-
-                <div class="form-group contact-forms">
-                    @Html.PasswordFor(model => model.Password, new { @class = "form-control", @name = "password", @placeholder = "Password" })
-                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                </div>
-
-                <div class="form-group contact-forms">
-                    @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control", @name = "confirmpassword", @placeholder = "ConfirmPassword" })
-                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
-                </div>
-
-                <div class="form-group contact-forms">
-                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @name = "name", @placeholder = "Name" })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                </div>
-
-                <div class="form-group contact-forms">
-                    @Html.TextBoxFor(model => model.Address, new { @class = "form-control", @name = "address", @placeholder = "Address" })
-                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
-                </div>
-
-                <div class="form-group contact-forms">
-                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @name = "email", @placeholder = "Email" })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                </div>
-
-                <div class="form-group contact-forms">
-                    @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", @name = "phone", @placeholder = "Phone" })
-                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-                </div>
-                <div class="form-group contact-forms">
-                    @Html.DropDownList("ProvinceID", new SelectList(new string[] { }), new { @class = "form-control", @id = "ddlProvince", @name = "province", @placeholder = "Province" })
-                    @Html.ValidationMessageFor(model => model.ProvinceID, "", new { @class = "text-danger" })
-                </div>
-
-                <div class="form-group contact-forms">
-                    @Html.DropDownList("DistrictID", new SelectList(new string[] { }), new { @class = "form-control", @id = "ddlDistrict", @name = "district", @placeholder = "District" })
-                    @Html.ValidationMessageFor(model => model.DistrictID, "", new { @class = "text-danger" })
-                </div>
-
-                @*<div class="form-group contact-forms">
-                    @Html.Captcha(registerCaptcha)
-                    @Html.TextBox("CaptchaCode")
-                </div>*@
-                <button type="submit" class="btn btn-block sent-butnn">Đăng kí</button>
-
-                @*<div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>*@
-
-            </div>
             }
 
         </div>
@@ -121,4 +235,3 @@
 </section>
 
 
-            
