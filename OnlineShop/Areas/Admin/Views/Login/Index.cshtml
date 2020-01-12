@@ -42,7 +42,7 @@
                                     {
                                         @Html.ValidationSummary(false, "", new { @class = "text-danger" })
                                         <div class="form-group">
-                                            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control form-control-user", @id = "exampleInputEmail", @placeholder = "Enter Email Address..." })
+                                            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control form-control-user", @id = "exampleInputEmail", @placeholder = "Username" })
                                         </div>
                                         <div class="form-group">
                                             @Html.PasswordFor(model => model.Password, new { @class = "form-control form-control-user", @id = "exampleInputPassword", @placeholder = "Password" })
