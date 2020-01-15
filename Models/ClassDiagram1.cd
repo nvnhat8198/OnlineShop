@@ -45,7 +45,7 @@
   <Class Name="Models.Dao.ProductDao" Collapsed="true">
     <Position X="5.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACQACAAQAAASAAAAQQAAAAAAAAUAAAAAAgAIAAAgAAQ=</HashCode>
+      <HashCode>ACQACAAQAAASAAAAQQAAAAAAAAUAAAAAAgAIAAAqAAQ=</HashCode>
       <FileName>Dao\ProductDao.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -211,7 +211,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Models.TimKiemTheoTen">
-    <Position X="7.75" Y="6.5" Width="1.5" />
+    <Position X="8" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>TimKiemTheoTen.cs</FileName>

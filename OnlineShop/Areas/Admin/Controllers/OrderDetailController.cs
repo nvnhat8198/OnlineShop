@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace OnlineShop.Areas.Admin.Controllers
 {
-    public class OrderDetailController : Controller
+    public class OrderDetailController : BaseController
     {
         // GET: Admin/OrderDetail
         [HasCredential(RoleID = "EDIT_USER")]

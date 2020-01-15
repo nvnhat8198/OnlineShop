@@ -12,11 +12,23 @@ using System.Web;
 using System.Web.Mvc;
 using System.Configuration;
 using System.Xml.Linq;
+using OnlineShop.UserManager;
 
 namespace OnlineShop.Controllers
 {
     public class UserController : Controller
     {
+
+        public static LoginAndRegister[] list = new LoginAndRegister[]
+        {
+            new LoginAndRegisterWithDB(),
+            new LoginAndRegisterWithXML(),
+            new LoginAndRegisterWithFileTXT()
+        };
+
+        public LoginAndRegister lar = list[0];
+
+
         // GET: User
         [HttpGet]
         public ActionResult Register()
@@ -39,12 +51,12 @@ namespace OnlineShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                var dao = new UserDao();
-                if (dao.CheckUserName(model.UserName))
+                //var dao = new UserDao();
+                if (lar.CheckUserName(model.UserName))
                 {
                     ModelState.AddModelError("", "Tên đăng nhập đã tồn tại");
                 }
-                else if (dao.CheckEmail(model.Email))
+                else if (lar.CheckEmail(model.Email))
                 {
                     ModelState.AddModelError("", "Email đã tồn tại");
                 }
@@ -62,7 +74,7 @@ namespace OnlineShop.Controllers
                     user.Status = true;
                     if (!string.IsNullOrEmpty(model.ProvinceID))
                     {
-                    user.ProvinceID =int.Parse(model.ProvinceID);
+                        user.ProvinceID = int.Parse(model.ProvinceID);
 
                     }
                     if (!string.IsNullOrEmpty(model.DistrictID))
@@ -70,7 +82,7 @@ namespace OnlineShop.Controllers
                         user.DistrictID = int.Parse(model.DistrictID);
 
                     }
-                    var result = dao.Insert(user);
+                    var result = lar.Regiter(user);
                     if (result > 0)
                     {
                         ViewBag.Success = "Đăng kí thành công";
@@ -82,8 +94,64 @@ namespace OnlineShop.Controllers
                     }
                 }
             }
+            var listMenu = new MenuDao().ListMenu();
+            ViewBag.listMenu = listMenu;
             return View(model);
         }
+
+        //[HttpPost]
+        ////[CaptchaValidation("CaptchaCode","registerCaptcha","Mã xác nhận không đúng")]
+        //public ActionResult Register(RegisterModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var dao = new UserDao();
+        //        if (dao.CheckUserName(model.UserName))
+        //        {
+        //            ModelState.AddModelError("", "Tên đăng nhập đã tồn tại");
+        //        }
+        //        else if (dao.CheckEmail(model.Email))
+        //        {
+        //            ModelState.AddModelError("", "Email đã tồn tại");
+        //        }
+        //        else
+        //        {
+        //            var user = new User();
+        //            user.UserName = model.UserName;
+        //            user.Name = model.Name;
+        //            user.Password = Encryptor.MD5Hash(model.Password);
+        //            user.Email = model.Email;
+        //            user.Phone = model.Phone;
+        //            user.Address = model.Address;
+        //            user.CreatedDate = DateTime.Now;
+        //            user.GroupID = "MEMBER";
+        //            user.Status = true;
+        //            if (!string.IsNullOrEmpty(model.ProvinceID))
+        //            {
+        //            user.ProvinceID =int.Parse(model.ProvinceID);
+
+        //            }
+        //            if (!string.IsNullOrEmpty(model.DistrictID))
+        //            {
+        //                user.DistrictID = int.Parse(model.DistrictID);
+
+        //            }
+        //            var result = dao.Insert(user);
+        //            if (result > 0)
+        //            {
+        //                ViewBag.Success = "Đăng kí thành công";
+        //                model = new RegisterModel();
+        //            }
+        //            else
+        //            {
+        //                ModelState.AddModelError("", "Đăng kí không thành công");
+        //            }
+        //        }
+        //    }
+        //    var listMenu = new MenuDao().ListMenu();
+        //    ViewBag.listMenu = listMenu;
+        //    return View(model);
+        //}
 
         [HttpGet]
         public ActionResult Login()
@@ -100,16 +168,16 @@ namespace OnlineShop.Controllers
             }
         }
 
-        //[HttpPost]
+        [HttpPost]
         public ActionResult Login(LoginModel model)
         {
             if (ModelState.IsValid)
             {
-                var dao = new UserDao();
-                var result = dao.Login(model.UserName, Encryptor.MD5Hash(model.Password));
+                //var dao = new UserDao();
+                var result = lar.Login(model.UserName, Encryptor.MD5Hash(model.Password));
                 if (result == 1)
                 {
-                    var user = dao.GetByID(model.UserName);
+                    var user = lar.getUserByUsername(model.UserName);
                     var userSession = new UserLogin();
                     userSession.UserName = user.UserName;
                     userSession.UserID = user.ID;
@@ -127,7 +195,7 @@ namespace OnlineShop.Controllers
                 }
                 else if (result == 0)
                 {
-                    ModelState.AddModelError("", "UsernName nhập không đúng!");
+                    ModelState.AddModelError("", "UserName nhập không đúng!");
                 }
                 else if (result == -1)
                 {
@@ -142,9 +210,57 @@ namespace OnlineShop.Controllers
             {
                 ModelState.AddModelError("", "Đăng nhập không thành công");
             }
-
+            var listMenu = new MenuDao().ListMenu();
+            ViewBag.listMenu = listMenu;
             return View(model);
         }
+
+        //[HttpPost]
+        //public ActionResult Login(LoginModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var dao = new UserDao();
+        //        var result = dao.Login(model.UserName, Encryptor.MD5Hash(model.Password));
+        //        if (result == 1)
+        //        {
+        //            var user = dao.GetByID(model.UserName);
+        //            var userSession = new UserLogin();
+        //            userSession.UserName = user.UserName;
+        //            userSession.UserID = user.ID;
+        //            userSession.GroupID = user.GroupID;
+
+        //            //
+        //            userSession.ShipName = user.Name;
+        //            userSession.ShipMobile = user.Phone;
+        //            userSession.ShipEmail = user.Email;
+        //            userSession.ShipAddress = user.Address;
+
+        //            Session.Add(CommonConstants.USER_SESSION, userSession);
+        //            //return RedirectToAction("Index", "Home");
+        //            return Redirect("/");
+        //        }
+        //        else if (result == 0)
+        //        {
+        //            ModelState.AddModelError("", "UsernName nhập không đúng!");
+        //        }
+        //        else if (result == -1)
+        //        {
+        //            ModelState.AddModelError("", "Tài khoản không còn tồn tại!");
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("", "Password nhập không đúng!");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        ModelState.AddModelError("", "Đăng nhập không thành công");
+        //    }
+        //    var listMenu = new MenuDao().ListMenu();
+        //    ViewBag.listMenu = listMenu;
+        //    return View(model);
+        //}
 
         public ActionResult Logout()
         {

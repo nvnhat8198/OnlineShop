@@ -16,7 +16,7 @@ namespace Models
 
         public virtual List<Product> Search(object keyword)
         {
-            return null;
+            return new List<Product>();
         }
     }
 }

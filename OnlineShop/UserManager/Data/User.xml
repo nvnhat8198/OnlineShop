@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <User ID="1" UserName="nhatt" Password="4297f44b13955235245b2497399d7a93" GroupID="MEMBER" Name="Văn Nhật" Address="HCM" Email="nhat@gmail.com" Phone="0987" ProvinceID="1" DistrictID="1" CreatedDate="" CreateBy="" ModifieDate="" ModifieBy="" Status="1" />
+  <User ID="2" UserName="nhat123" Password="4297f44b13955235245b2497399d7a93" GroupID="MEMBER" Name="Văn Nhật" Address="HCM" Email="VN@gmail.com" Phone="06565656" ProvinceID="223" DistrictID="22303" CreatedDate="1/15/2020 3:11:02 PM" CreateBy="" ModifieDate="" ModifieBy="" Status="1" />
+  <User ID="3" UserName="nhat1234" Password="4297f44b13955235245b2497399d7a93" GroupID="MEMBER" Name="Văn Nhật" Address="" Email="VN1@gmail.com" Phone="" ProvinceID="" DistrictID="" CreatedDate="1/15/2020 3:11:58 PM" CreateBy="" ModifieDate="" ModifieBy="" Status="1" />
+  <User ID="4" UserName="nhat12345" Password="4297f44b13955235245b2497399d7a93" GroupID="MEMBER" Name="Văn Nhật" Address="" Email="VN12@gmail.com" Phone="" ProvinceID="207" DistrictID="" CreatedDate="1/15/2020 3:12:12 PM" CreateBy="" ModifieDate="" ModifieBy="" Status="1" />
+</Root>
