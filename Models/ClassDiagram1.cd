@@ -45,7 +45,7 @@
   <Class Name="Models.Dao.ProductDao" Collapsed="true">
     <Position X="5.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACQACAAQAAASAAAAQQAAAAAAAAUAAAAAAgAIAAAqAAQ=</HashCode>
+      <HashCode>ACQACAAQAAASACAAQQAAAAAAAAUAAAAAAoAIAAAgAAQ=</HashCode>
       <FileName>Dao\ProductDao.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -210,32 +210,32 @@
       <FileName>FE\UserGroup.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Models.TimKiemTheoTen">
+  <Class Name="Models.SearchByName">
     <Position X="8" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
-      <FileName>TimKiemTheoTen.cs</FileName>
+      <FileName>SearchByName.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Models.TimKiemTheoGia">
+  <Class Name="Models.SearchByPrice">
     <Position X="4.25" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
-      <FileName>TimKiemTheoGia.cs</FileName>
+      <FileName>SearchByPrice.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Models.TimKiemTheoMoTa">
+  <Class Name="Models.SearchByDescription">
     <Position X="1" Y="6.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
-      <FileName>TimKiemTheoMoTa.cs</FileName>
+      <FileName>SearchByDescription.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Models.TimKiem">
+  <Class Name="Models.SearchManager">
     <Position X="4.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
-      <FileName>TimKiem.cs</FileName>
+      <FileName>SearchManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

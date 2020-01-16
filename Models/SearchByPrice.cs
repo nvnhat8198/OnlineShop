@@ -6,7 +6,7 @@ using Models.FE;
 
 namespace Models
 {
-    public class TimKiemTheoGia : TimKiem
+    public class SearchByPrice : SearchManager
     {
         public override List<Product> Search(object keyword)
         {

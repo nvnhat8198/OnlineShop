@@ -6,10 +6,10 @@ using System.Text;
 
 namespace Models
 {
-    public class TimKiem
+    public class SearchManager
     {
         public OnlineShopDbContext db = null;
-        public TimKiem()
+        public SearchManager()
         {
             db = new OnlineShopDbContext();
         }

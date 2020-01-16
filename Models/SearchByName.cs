@@ -6,11 +6,11 @@ using Models.FE;
 
 namespace Models
 {
-    public class TimKiemTheoMoTa : TimKiem
+    public class SearchByName : SearchManager
     {
         public override List<Product> Search(object keyword)
         {
-            return db.Products.Where(x => x.Description.Contains((string)keyword)).ToList();
+            return db.Products.Where(x => x.Name.Contains((string)keyword)).ToList();
         }
     }
 }
