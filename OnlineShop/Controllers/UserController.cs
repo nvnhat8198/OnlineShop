@@ -26,7 +26,7 @@ namespace OnlineShop.Controllers
             new LoginAndRegisterWithFileTXT()
         };
 
-        public LoginAndRegister lar = list[0];
+        public LoginAndRegister lar = list[1];  // Lưu trữ thông tin User vào file xml
 
 
         // GET: User

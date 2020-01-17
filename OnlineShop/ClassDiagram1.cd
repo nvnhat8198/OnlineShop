@@ -49,29 +49,29 @@
       <FileName>Areas\Admin\AdminAreaRegistration.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OnlineShop.Areas.Admin.Controllers.BaseController" Collapsed="true">
-    <Position X="7.5" Y="0.5" Width="1.5" />
+  <Class Name="OnlineShop.Areas.Admin.Controllers.BaseController">
+    <Position X="6.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Areas\Admin\Controllers\BaseController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OnlineShop.Areas.Admin.Controllers.CategoryController" Collapsed="true">
-    <Position X="3" Y="2" Width="1.5" />
+    <Position X="3" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEACAAEAAAAAAAA=</HashCode>
       <FileName>Areas\Admin\Controllers\CategoryController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OnlineShop.Areas.Admin.Controllers.ContentController" Collapsed="true">
-    <Position X="7.5" Y="2" Width="1.5" />
+    <Position X="6.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAEACAAEAAAAAAAA=</HashCode>
       <FileName>Areas\Admin\Controllers\ContentController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OnlineShop.Areas.Admin.Controllers.HomeController" Collapsed="true">
-    <Position X="9.75" Y="2" Width="1.5" />
+    <Position X="8.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Areas\Admin\Controllers\HomeController.cs</FileName>
@@ -85,28 +85,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="OnlineShop.Areas.Admin.Controllers.OrderController" Collapsed="true">
-    <Position X="12" Y="2" Width="1.5" />
+    <Position X="10" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Areas\Admin\Controllers\OrderController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OnlineShop.Areas.Admin.Controllers.OrderDetailController" Collapsed="true">
-    <Position X="14.25" Y="2" Width="1.5" />
+    <Position X="11.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Areas\Admin\Controllers\OrderDetailController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OnlineShop.Areas.Admin.Controllers.ProductController" Collapsed="true">
-    <Position X="0.75" Y="2" Width="1.5" />
+    <Position X="1.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAUAAEACAgEAAAAAAAA=</HashCode>
       <FileName>Areas\Admin\Controllers\ProductController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OnlineShop.Areas.Admin.Controllers.UserController" Collapsed="true">
-    <Position X="5.25" Y="2" Width="1.5" />
+    <Position X="4.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAQIAAAUAAEACAAEAAAAAAAA=</HashCode>
       <FileName>Areas\Admin\Controllers\UserController.cs</FileName>
@@ -232,28 +232,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="OnlineShop.UserManager.LoginAndRegister" Collapsed="true">
-    <Position X="3.25" Y="3.5" Width="1.5" />
+    <Position X="3.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAASAAAQAAAAAQA=</HashCode>
       <FileName>UserManager\LoginAndRegister.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OnlineShop.UserManager.LoginAndRegisterWithDB" Collapsed="true">
-    <Position X="5.5" Y="4.75" Width="2" />
+  <Class Name="OnlineShop.UserManager.LoginAndRegisterWithDB">
+    <Position X="5.5" Y="6" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAACAAAAAAAAAAAAAAASAAAQAAAAAQA=</HashCode>
       <FileName>UserManager\LoginAndRegisterWithDB.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OnlineShop.UserManager.LoginAndRegisterWithFileTXT" Collapsed="true">
-    <Position X="0.5" Y="4.75" Width="2.25" />
+  <Class Name="OnlineShop.UserManager.LoginAndRegisterWithFileTXT">
+    <Position X="0.5" Y="6" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAASAAAQAAAAAQA=</HashCode>
       <FileName>UserManager\LoginAndRegisterWithFileTXT.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OnlineShop.UserManager.LoginAndRegisterWithXML" Collapsed="true">
-    <Position X="3" Y="4.75" Width="2.25" />
+  <Class Name="OnlineShop.UserManager.LoginAndRegisterWithXML">
+    <Position X="3" Y="6" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAASAAAQAAAAAQA=</HashCode>
       <FileName>UserManager\LoginAndRegisterWithXML.cs</FileName>

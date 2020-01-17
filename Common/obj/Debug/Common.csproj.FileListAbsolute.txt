@@ -1,6 +1,5 @@
 E:\MeUSolutions\ASP.NETfrom11\OnlineShop\Common\bin\Debug\Common.dll
 E:\MeUSolutions\ASP.NETfrom11\OnlineShop\Common\bin\Debug\Common.pdb
-E:\MeUSolutions\ASP.NETfrom11\OnlineShop\Common\obj\Debug\Common.csprojAssemblyReference.cache
 E:\MeUSolutions\ASP.NETfrom11\OnlineShop\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 E:\MeUSolutions\ASP.NETfrom11\OnlineShop\Common\obj\Debug\Common.dll
 E:\MeUSolutions\ASP.NETfrom11\OnlineShop\Common\obj\Debug\Common.pdb

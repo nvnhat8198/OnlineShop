@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Root>
-  <User ID="1" UserName="nhatt" Password="4297f44b13955235245b2497399d7a93" GroupID="MEMBER" Name="Văn Nhật" Address="HCM" Email="nhat@gmail.com" Phone="0987" ProvinceID="1" DistrictID="1" CreatedDate="" CreateBy="" ModifieDate="" ModifieBy="" Status="1" />
-  <User ID="2" UserName="nhat123" Password="4297f44b13955235245b2497399d7a93" GroupID="MEMBER" Name="Văn Nhật" Address="HCM" Email="VN@gmail.com" Phone="06565656" ProvinceID="223" DistrictID="22303" CreatedDate="1/15/2020 3:11:02 PM" CreateBy="" ModifieDate="" ModifieBy="" Status="1" />
-  <User ID="3" UserName="nhat1234" Password="4297f44b13955235245b2497399d7a93" GroupID="MEMBER" Name="Văn Nhật" Address="" Email="VN1@gmail.com" Phone="" ProvinceID="" DistrictID="" CreatedDate="1/15/2020 3:11:58 PM" CreateBy="" ModifieDate="" ModifieBy="" Status="1" />
-  <User ID="4" UserName="nhat12345" Password="4297f44b13955235245b2497399d7a93" GroupID="MEMBER" Name="Văn Nhật" Address="" Email="VN12@gmail.com" Phone="" ProvinceID="207" DistrictID="" CreatedDate="1/15/2020 3:12:12 PM" CreateBy="" ModifieDate="" ModifieBy="" Status="1" />
+  <User ID="1" UserName="nhat12345" Password="e10adc3949ba59abbe56e057f20f883e" GroupID="MEMBER" Name="Nhật Nguyễn" Address="Thừa Thiên Huế" Email="vannhat@gmail.com" Phone="0999999999" ProvinceID="201" DistrictID="20115" CreatedDate="1/17/2020 10:29:38 AM" CreateBy="" ModifieDate="" ModifieBy="" Status="1" />
+  <User ID="2" UserName="nhat000" Password="670b14728ad9902aecba32e22fa4f6bd" GroupID="MEMBER" Name="Nhật Nguyễn văn" Address="Thừa Thiên Huế" Email="vannha00t@gmail.com" Phone="000000" ProvinceID="111" DistrictID="11105" CreatedDate="1/17/2020 11:05:33 AM" CreateBy="" ModifieDate="" ModifieBy="" Status="1" />
 </Root>

@@ -15,7 +15,7 @@ namespace Models.Dao
             new SearchByDescription(),
             new SearchByName()
         };
-        private SearchManager s = listSearch[2];
+        private SearchManager s = listSearch[1];  // Tìm kiếm theo mô tả
 
         OnlineShopDbContext db = null;
         public ProductDao()
