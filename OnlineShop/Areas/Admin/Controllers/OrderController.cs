@@ -10,7 +10,7 @@ namespace OnlineShop.Areas.Admin.Controllers
     public class OrderController : BaseController
     {
         // GET: Admin/Order
-        // [HasCredential(RoleID = "EDIT_USER")] // Kiểm tra quyền Admin trước
+        [HasCredential(RoleID = "EDIT_USER")] // Kiểm tra quyền Admin trước
         public ActionResult Index()
         {
             var model = new OrderDao().ListOrder();
